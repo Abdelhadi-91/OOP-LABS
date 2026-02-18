@@ -78,5 +78,7 @@ public class ex6 {
         } else {
             System.out.println("ACCEPTED");
         }
+
+        scanner.close();
     }
 }
