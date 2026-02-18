@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ex2 {
 
     public static boolean isPlaindrome(String str,int start,int end) {
-        while (start>end) {
+        while (start<end) {
             if (str.charAt(start)!=str.charAt(end)) {
                 return false;
             }
@@ -21,11 +21,11 @@ public class ex2 {
         String str = scanner.nextLine();
 
         for (int i = 0; i < str.length(); i++) {
-            for (int j = i+1; j < str.length(); j++) {
+            for (int j = i; j < str.length(); j++) {
                 if (isPlaindrome(str,i,j)) {
-                    if (j-i>max_len) {
+                    if (j-i+1>max_len) {
                         max_len = j-i+1;
-                        long_str = str.substring(i, j);
+                        long_str = str.substring(i, j+1);
                     }
                 }
             }
