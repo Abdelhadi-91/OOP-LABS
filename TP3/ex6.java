@@ -62,19 +62,19 @@ public class ex6 {
         }
 
         if (!len) {
-            System.out.println("REJECTED - Length is between 8 and 16 (inclusive)");
+            System.out.println("REJECTED - Cause 1");
         } else if (!upper) {
-            System.out.println("REJECTED - Contains at least one uppercase letter (A–Z)");
+            System.out.println("REJECTED - Cause 2");
         } else if (!lower) {
-            System.out.println("REJECTED - Contains at least one lowercase letter (a–z)");
+            System.out.println("REJECTED - Cause 3");
         } else if (!digit) {
-            System.out.println("REJECTED - Contains at least one digit (0–9)");
+            System.out.println("REJECTED - Cause 4");
         } else if (!special) {
-            System.out.println("REJECTED - Contains at least one special character from: @ # $ % !");
+            System.out.println("REJECTED - Cause 5");
         } else if (space) {
-            System.out.println("REJECTED - Must not contain a space");
+            System.out.println("REJECTED - Cause 6");
         } else if (repeat) {
-            System.out.println("REJECTED - Must not contain the same character repeated 3 times in a row");
+            System.out.println("REJECTED - Cause 7");
         } else {
             System.out.println("ACCEPTED");
         }
