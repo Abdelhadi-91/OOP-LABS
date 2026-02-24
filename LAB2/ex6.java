@@ -3,9 +3,14 @@ import java.util.Scanner;
 public class ex6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        boolean out = false;
+        int count = 0;
+
+        while (!out) {
         System.out.print("Enter password: ");
         String str = scanner.nextLine();
-
+        count++;
         boolean len = str.length() >= 8 && str.length() <= 16;
         boolean upper = false;
         boolean lower = false;
@@ -13,6 +18,7 @@ public class ex6 {
         boolean special = false;
         boolean space = false;
         boolean repeat = false;
+        
 
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) >= 'A' && str.charAt(i) <= 'Z') {
@@ -61,22 +67,30 @@ public class ex6 {
             }
         }
 
+        
+
         if (!len) {
-            System.out.println("REJECTED - Cause 1");
+            System.out.println("REJECTED - Length is between 8 and 16 (inclusive)");
         } else if (!upper) {
-            System.out.println("REJECTED - Cause 2");
+            System.out.println("REJECTED - Contains at least one uppercase letter (A Z)");
         } else if (!lower) {
-            System.out.println("REJECTED - Cause 3");
+            System.out.println("REJECTED - Contains at least one lowercase letter (a z)");
         } else if (!digit) {
-            System.out.println("REJECTED - Cause 4");
+            System.out.println("REJECTED - Contains at least one digit (0 9)");
         } else if (!special) {
-            System.out.println("REJECTED - Cause 5");
+            System.out.println("REJECTED - Contains at least one special character from: @ # $ % !");
         } else if (space) {
-            System.out.println("REJECTED - Cause 6");
+            System.out.println("REJECTED - Must not contain a space");
         } else if (repeat) {
-            System.out.println("REJECTED - Cause 7");
+            System.out.println("REJECTED - Must not contain the same character repeated 3 times in a row");
         } else {
             System.out.println("ACCEPTED");
+            out = true;
+        }
+        if (count==3) {
+            break;
+        }
+            
         }
 
         scanner.close();
