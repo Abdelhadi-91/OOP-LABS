@@ -4,15 +4,15 @@ public class TransactionLog {
     int size;
     int capacity;
 
-    public TransactionLog(int capacity){
+    public TransactionLog(int capacity) {
         this.capacity = capacity;
         this.size = 0;
         this.entries = new Transaction[capacity];
     }
 
     public void add(Transaction t) {
-        if (size<capacity) {
-            entries[size]=t;
+        if (size < capacity) {
+            entries[size] = t;
             size++;
         } else {
             System.out.println("Transaction Logs are full");
@@ -20,7 +20,7 @@ public class TransactionLog {
     }
 
     public Transaction get(int i) {
-        if (i<size && i>=0) {
+        if (i < size && i >= 0) {
             return entries[i];
         }
         return null;

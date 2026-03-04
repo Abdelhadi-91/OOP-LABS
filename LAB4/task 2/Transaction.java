@@ -1,5 +1,5 @@
 public class Transaction {
-    
+
     String type;
     double amount;
     double balanceAfter;
@@ -11,6 +11,6 @@ public class Transaction {
     }
 
     public String toLine() {
-        return String.format("Type: %s, Amount: %.2f, Balance: %.2f",type,amount,balanceAfter);
+        return String.format("Type: %s, Amount: %.2f, Balance: %.2f", type, amount, balanceAfter);
     }
 }

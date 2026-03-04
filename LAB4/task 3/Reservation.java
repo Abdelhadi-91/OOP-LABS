@@ -8,6 +8,6 @@ public class Reservation {
     }
 
     public String summary() {
-        return studentName + " reserved " + slot.toString(); 
+        return studentName + " reserved " + slot.toString();
     }
 }

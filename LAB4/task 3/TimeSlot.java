@@ -1,7 +1,7 @@
 public class TimeSlot {
     int day;
     int startHour;
-    int endHour;  
+    int endHour;
 
     public TimeSlot(int day, int startHour, int endHour) {
         if (startHour >= endHour) {

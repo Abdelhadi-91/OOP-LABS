@@ -1,5 +1,5 @@
 public class SmartThermostat {
-    
+
     String location;
     double currentTemp;
     double targetTemp;
@@ -34,23 +34,24 @@ public class SmartThermostat {
         double rate;
         if (isOn) {
             rate = ecoMode ? 0.2 : 0.5;
-            if (currentTemp<targetTemp) {
+            if (currentTemp < targetTemp) {
                 currentTemp += rate;
-            } else if (currentTemp>targetTemp) {
-                currentTemp -=rate;
+            } else if (currentTemp > targetTemp) {
+                currentTemp -= rate;
             }
         } else {
             double drift = 0.1;
-            if (currentTemp<outsideTemp) {
+            if (currentTemp < outsideTemp) {
                 currentTemp += drift;
-            } else if (currentTemp>outsideTemp) {
-                currentTemp -=drift;
+            } else if (currentTemp > outsideTemp) {
+                currentTemp -= drift;
             }
         }
     }
 
     public String status() {
-        return String.format("Loc: %s, Current: %.2f, Target: %.2f, Eco: %s, On: %s",location,currentTemp,targetTemp,ecoMode,isOn);
+        return String.format("Loc: %s, Current: %.2f, Target: %.2f, Eco: %s, On: %s", location, currentTemp, targetTemp,
+                ecoMode, isOn);
     }
 
     public static void main(String[] args) {
@@ -58,10 +59,10 @@ public class SmartThermostat {
         System.out.println(thermo.status());
         double outsideTemp = 38;
         for (int i = 0; i < 20; i++) {
-            if (i==10) {
+            if (i == 10) {
                 thermo.toggleEcoMode();
             }
-            if (i==15) {
+            if (i == 15) {
                 thermo.turnOff();
             }
             thermo.step(outsideTemp);
