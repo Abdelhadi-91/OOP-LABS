@@ -11,12 +11,12 @@ public class StudyRoom {
 
     public boolean reserve(String student, TimeSlot slot) {
         if (size >= reservations.length) {
-            System.out.println("Room is full");
+            System.out.println("error: room is full");
             return false;
         }
         for (int i = 0; i < size; i++) {
             if (reservations[i].slot.overlaps(slot)) {
-                System.out.println("Overlaps");
+                System.out.println("error: overlaps");
                 return false;
             }
         }

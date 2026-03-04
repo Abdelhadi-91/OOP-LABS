@@ -5,7 +5,7 @@ public class TimeSlot {
 
     public TimeSlot(int day, int startHour, int endHour) {
         if (startHour >= endHour) {
-            System.out.println("Error: Start time must be before end time.");
+            System.out.println("error: start time must be before end time");
         }
         this.day = day;
         this.startHour = startHour;
@@ -20,6 +20,6 @@ public class TimeSlot {
     }
 
     public String toString() {
-        return "Day " + day + " (" + startHour + ":00 - " + endHour + ":00)";
+        return "Day " + day + " (" + startHour + " - " + endHour + ")";
     }
 }
